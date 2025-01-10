@@ -4,16 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2d44afd2-2729-48cc-a1f9-38b9416f87c8" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/finalyze/src/pages/HomePage/HomePage.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/finalyze/src/pages/SigninPage/SignupPage.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/finalyze/src/pages/SignupPage/SigninPage.jsx" afterDir="false" />
+    <list default="true" id="2d44afd2-2729-48cc-a1f9-38b9416f87c8" name="Changes" comment="signs pages and routes">
+      <change afterPath="$PROJECT_DIR$/finalyze/src/context/AuthContext.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/finalyze/src/pages/MainPage/MainPage.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/finalyze/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/finalyze/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/finalyze/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/finalyze/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/finalyze/src/App.css" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/finalyze/src/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/finalyze/src/App.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/finalyze/src/assets/react.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/finalyze/src/pages/SigninPage/SignupPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/finalyze/src/pages/SigninPage/SignupPage.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/finalyze/src/pages/SignupPage/SigninPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/finalyze/src/pages/SignupPage/SigninPage.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,23 +55,23 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "master",
-    "last_opened_file_path": "/home/ada/Desktop/Programas/finalyze/finalyze",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "run.code.analysis.last.selected.profile": "pProject Default",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "ts.external.directory.path": "/snap/webstorm/423/plugins/javascript-plugin/jsLanguageServicesImpl/external",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/ada/Desktop/Programas/finalyze/finalyze&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;/snap/webstorm/423/plugins/javascript-plugin/jsLanguageServicesImpl/external&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/finalyze" />
@@ -96,11 +95,26 @@
       <workItem from="1736351596060" duration="157000" />
       <workItem from="1736355573074" duration="3801000" />
       <workItem from="1736390833182" duration="807000" />
-      <workItem from="1736391676890" duration="853000" />
+      <workItem from="1736391676890" duration="2032000" />
+      <workItem from="1736448314648" duration="1759000" />
+      <workItem from="1736469171399" duration="72000" />
     </task>
+    <task id="LOCAL-00001" summary="signs pages and routes">
+      <option name="closed" value="true" />
+      <created>1736392625059</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1736392625063</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="signs pages and routes" />
+    <option name="LAST_COMMIT_MESSAGE" value="signs pages and routes" />
   </component>
 </project>
