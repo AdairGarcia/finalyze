@@ -1,10 +1,24 @@
 import {useForm} from "react-hook-form";
+import {useAuth} from "../../context/AuthContext.jsx";
+import {useNavigate} from "react-router-dom";
 
 export const SignupPage = () => {
     const { register, handleSubmit} = useForm();
+    const { signup } = useAuth();
+    const navigate= useNavigate();
 
-    const onSubmit = handleSubmit((data) => {
-        console.log(data);
+    const onSubmit = handleSubmit(async (data) => {
+        try {
+            const info = await signup(data.username, data.email, data.password);
+            const body = JSON.parse(info.body);
+
+            if(!body.userConfirmed && info.statusCode === 200){
+                navigate("/signup/code");
+            }
+
+        } catch (error) {
+            console.error("Error al registrarse", error);
+        }
     });
 
     return(
@@ -34,7 +48,7 @@ export const SignupPage = () => {
                     {...register("password", {required: true})}
                 />
                 <button type="submit">
-                    Iniciar sesión
+                    Registrarse
                 </button>
 
 

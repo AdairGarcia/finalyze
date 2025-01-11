@@ -1,5 +1,5 @@
 import { useForm } from 'react-hook-form';
-import {useAuth} from "../../context/AuthContext.jsx";
+import { useAuth } from "../../context/AuthContext.jsx";
 
 export const SigninPage = () => {
     const { register, handleSubmit} = useForm();
@@ -9,6 +9,7 @@ export const SigninPage = () => {
         console.log("Signin: ", data);
         try {
             const info = await signin(data.username, data.password);
+
             console.log("Data: ", info);
             console.log("Usuario logueado YUPIII");
         } catch (error) {
