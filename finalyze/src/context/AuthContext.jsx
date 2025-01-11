@@ -1,4 +1,6 @@
-import {createContext, useContext, useState} from "react";
+import {createContext, useContext, useEffect, useState} from "react";
+import {CognitoJwtVerifier} from 'aws-jwt-verify';
+import Cookies from 'js-cookie';
 
 export const AuthContext = createContext();
 
@@ -13,7 +15,13 @@ export const useAuth = () => {
 export const AuthProvider = ({children}) => {
     const [isAuthenticated, setIsAuthenticated] = useState(false);
     const [user, setUser] = useState(null);
-    const [token, setToken] = useState(null);
+    const [token, setToken] = useState(() => {
+        return Cookies.get('token') ? JSON.parse(Cookies.get('token')) : null;
+    });
+
+    useEffect(() => {
+        Cookies.set('token', JSON.stringify(token));
+    }, [token]);
 
     const signup = async (username, email, password) => {
         try {
@@ -124,11 +132,13 @@ export const AuthProvider = ({children}) => {
 
     const signout = async () => {
         try {
-            await fetch('YOUR_API_GATEWAY_URL/auth/signout', {
+            await fetch('https://rqt24i6itf.execute-api.us-east-1.amazonaws.com/dev/signout', {
                 method: 'POST',
                 headers: {
-                    'Authorization': `Bearer ${token?.accessToken}`
-                }
+                    'Content-Type': 'application/json',
+                    'xToken': token.accessToken
+                },
+                body: JSON.stringify({path: '/signout', httpMethod: 'POST'})
             });
         } finally {
             setIsAuthenticated(false);
@@ -136,6 +146,33 @@ export const AuthProvider = ({children}) => {
             setToken(null);
         }
     };
+
+    // Token validation
+    useEffect(() => {
+        const validateToken = async (token) => {
+            try {
+                return await verifier.verify(token);
+            } catch (error) {
+                return error;
+            }
+        };
+
+        const initializeAuth = async () => {
+            if (token && token.accessToken) {
+                const tokenValidated = await validateToken(token.accessToken);
+                if (tokenValidated) {
+                    setIsAuthenticated(true);
+                    setUser(tokenValidated.username);
+                } else {
+                    setIsAuthenticated(false);
+                    setUser(null);
+                    setToken(null);
+                }
+            }
+        };
+
+        initializeAuth();
+    }, [token]);
 
     return(
         <AuthContext.Provider value = {{
@@ -151,3 +188,11 @@ export const AuthProvider = ({children}) => {
         </AuthContext.Provider>
     )
 }
+
+
+const verifier = CognitoJwtVerifier.create({
+    userPoolId: 'us-east-1_MVkFwGenG',
+    tokenUse: 'access',
+    clientId: '2u81gv26p21upet4olns1m67pf',
+});
+

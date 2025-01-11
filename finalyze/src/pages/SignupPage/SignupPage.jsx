@@ -1,6 +1,6 @@
 import {useForm} from "react-hook-form";
 import {useAuth} from "../../context/AuthContext.jsx";
-import {useNavigate} from "react-router-dom";
+import {Link, useNavigate} from "react-router-dom";
 
 export const SignupPage = () => {
     const { register, handleSubmit} = useForm();
@@ -51,9 +51,11 @@ export const SignupPage = () => {
                 <button type="submit">
                     Registrarse
                 </button>
-
-
             </form>
+            <p>
+                ¿Ya tienes una cuenta?
+                <Link to={"/signin"}>Ingresa aquí</Link>
+            </p>
         </div>
     )
 };
