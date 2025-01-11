@@ -4,10 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2d44afd2-2729-48cc-a1f9-38b9416f87c8" name="Changes" comment="conection with lambda auth">
-      <change afterPath="$PROJECT_DIR$/finalyze/src/pages/ConfirmCodePage/ConfirmCodePage.jsx" afterDir="false" />
+    <list default="true" id="2d44afd2-2729-48cc-a1f9-38b9416f87c8" name="Changes" comment="signup functionality">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/finalyze/src/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/finalyze/src/App.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/finalyze/src/context/AuthContext.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/finalyze/src/context/AuthContext.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/finalyze/src/pages/SigninPage/SigninPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/finalyze/src/pages/SigninPage/SigninPage.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/finalyze/src/pages/SignupPage/SignupPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/finalyze/src/pages/SignupPage/SignupPage.jsx" afterDir="false" />
@@ -102,7 +100,7 @@
       <workItem from="1736469171399" duration="72000" />
       <workItem from="1736469296569" duration="7765000" />
       <workItem from="1736478657016" duration="6298000" />
-      <workItem from="1736557983390" duration="4709000" />
+      <workItem from="1736557983390" duration="6426000" />
     </task>
     <task id="LOCAL-00001" summary="signs pages and routes">
       <option name="closed" value="true" />
@@ -128,7 +126,15 @@
       <option name="project" value="LOCAL" />
       <updated>1736477801631</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="signup functionality">
+      <option name="closed" value="true" />
+      <created>1736562739612</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1736562739612</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -138,6 +144,7 @@
     <MESSAGE value="signs pages and routes" />
     <MESSAGE value="useforms" />
     <MESSAGE value="conection with lambda auth" />
-    <option name="LAST_COMMIT_MESSAGE" value="conection with lambda auth" />
+    <MESSAGE value="signup functionality" />
+    <option name="LAST_COMMIT_MESSAGE" value="signup functionality" />
   </component>
 </project>

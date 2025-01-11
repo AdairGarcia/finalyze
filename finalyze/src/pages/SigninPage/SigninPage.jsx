@@ -1,21 +1,28 @@
 import { useForm } from 'react-hook-form';
 import { useAuth } from "../../context/AuthContext.jsx";
+import {useEffect} from "react";
+import {useNavigate} from "react-router-dom";
 
 export const SigninPage = () => {
     const { register, handleSubmit} = useForm();
-    const { signin } = useAuth();
+    const { signin, isAuthenticated } = useAuth();
+    const navigate = useNavigate();
 
     const onSubmit = handleSubmit(async (data) => {
         console.log("Signin: ", data);
         try {
             const info = await signin(data.username, data.password);
 
-            console.log("Data: ", info);
-            console.log("Usuario logueado YUPIII");
         } catch (error) {
             console.error("Error al iniciar sesión", error);
         }
     });
+
+    useEffect(() => {
+        if(isAuthenticated){
+            navigate('/files');
+        }
+    }, [isAuthenticated]);
 
     return (
         <div>

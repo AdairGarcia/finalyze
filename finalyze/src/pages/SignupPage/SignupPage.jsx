@@ -30,6 +30,7 @@ export const SignupPage = () => {
                     type={"email"}
                     name={"email"}
                     placeholder={"Correo@ejemplo.com"}
+                    autoComplete={"off"}
                     {...register("email", {required: true})}
                 />
                 <input

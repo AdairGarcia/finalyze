@@ -74,8 +74,9 @@ export const AuthProvider = ({children}) => {
 
             console.log("Response: ", response);
             const data = await response.json();
-            setToken(data.tokens);
-            setUser(data.user);
+
+            setToken(data.body.tokens);
+            setUser(data.body.user);
             setIsAuthenticated(true);
 
             return data;
@@ -105,8 +106,11 @@ export const AuthProvider = ({children}) => {
 
             console.log("Response: ", response);
             const data = await response.json();
-            setToken(data.tokens);
-            setUser(data.user);
+            console.log("Data: ", data);
+            const body = JSON.parse(data.body);
+
+            setToken(body.tokens);
+            setUser(body.username);
             setIsAuthenticated(true);
 
             return data;
