@@ -9,7 +9,6 @@ export const SigninPage = () => {
     const navigate = useNavigate();
 
     const onSubmit = handleSubmit(async (data) => {
-        console.log("Signin: ", data);
         try {
             const info = await signin(data.username, data.password);
         } catch (error) {
