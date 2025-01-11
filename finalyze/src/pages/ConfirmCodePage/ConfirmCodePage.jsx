@@ -27,6 +27,7 @@ export const ConfirmCodePage = () => {
                 <input
                     type="text"
                     placeholder="Ingresa el código de confirmación"
+                    autoComplete={"off"}
                     {...register("code", { required: true })}
                 />
                 <button type="submit">

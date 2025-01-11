@@ -39,20 +39,14 @@ export const AuthProvider = ({children}) => {
                 throw new Error(error.message);
             }
 
-            console.log("Response: ", response);
             const data = await response.json();
             const body = JSON.parse(data.body);
 
-
             if(body.userConfirmed === false){
-                setUser(body.username);
+                console.log("User not confirmed");
+                Cookies.set('username', username);
                 return data;
             }
-
-            setToken(data.tokens);
-            setUser(data.user);
-            setIsAuthenticated(true);
-
             return data;
         } catch (error) {
             setIsAuthenticated(false);
@@ -63,7 +57,8 @@ export const AuthProvider = ({children}) => {
     }
 
     const confirmCode = async (code) => {
-        const username = user;
+        const username = Cookies.get('username');
+        console.log("Username to confirm: ", username);
         try {
             const response = await fetch('https://rqt24i6itf.execute-api.us-east-1.amazonaws.com/dev/signup/code', {
                 method: 'POST',
@@ -80,13 +75,8 @@ export const AuthProvider = ({children}) => {
                 throw new Error(error.message);
             }
 
-            console.log("Response: ", response);
             const data = await response.json();
-
-            setToken(data.body.tokens);
-            setUser(data.body.user);
-            setIsAuthenticated(true);
-
+            Cookies.remove('username');
             return data;
         } catch (error) {
             setIsAuthenticated(false);
@@ -112,9 +102,7 @@ export const AuthProvider = ({children}) => {
                 throw new Error(error.message);
             }
 
-            console.log("Response: ", response);
             const data = await response.json();
-            console.log("Data: ", data);
             const body = JSON.parse(data.body);
 
             setToken(body.tokens);
