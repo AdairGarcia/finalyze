@@ -49,6 +49,10 @@ export const MainPage = () => {
                     </button>
                 </form>
             </div>
+            <button>	
+                Subir archivo
+            </button>
+
         </div>
     );
 };
