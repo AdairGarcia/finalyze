@@ -1,0 +1,12 @@
+.password-validations p {
+    margin: 0;
+    padding: 0;
+}
+
+.valid {
+    color: green;
+}
+
+.invalid {
+    color: red;
+}

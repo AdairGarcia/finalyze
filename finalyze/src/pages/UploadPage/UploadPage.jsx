@@ -38,4 +38,3 @@ const UploadPage = () => {
 };
 
 export default UploadPage;
-//src/pages/UploadPage/UploadPage.jsx

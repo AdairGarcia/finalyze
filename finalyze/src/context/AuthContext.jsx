@@ -104,11 +104,14 @@ export const AuthProvider = ({children}) => {
 
             const data = await response.json();
             const body = JSON.parse(data.body);
+            console.log("Body: ", body);
 
-            setToken(body.tokens);
-            setUser(body.username);
-            setIsAuthenticated(true);
-
+            if(data.statusCode === 200){
+                console.log("Inicio de sesión exitoso");
+                setToken(body.tokens);
+                setUser(body.username);
+                setIsAuthenticated(true);
+            }
             return data;
         } catch (error) {
             setIsAuthenticated(false);
