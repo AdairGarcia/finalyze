@@ -1,19 +1,20 @@
 import { useForm } from 'react-hook-form';
 import { useAuth } from "../../context/AuthContext.jsx";
-import {useEffect} from "react";
-import {Link, useNavigate} from "react-router-dom";
+import { useEffect, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 
 export const SigninPage = () => {
-    const { register, handleSubmit} = useForm();
+    const { register, handleSubmit } = useForm();
     const { signin, isAuthenticated } = useAuth();
     const navigate = useNavigate();
+    const [showPassword, setShowPassword] = useState(false);
 
     const onSubmit = handleSubmit(async (data) => {
         try {
             const info = await signin(data.username, data.password);
-            if(info.statusCode === 200){
+            if (info.statusCode === 200) {
                 console.log("Inicio de sesión exitoso");
-            } else if(info.statusCode === 500){
+            } else if (info.statusCode === 500) {
                 console.log("Message:", info.message);
             }
         } catch (error) {
@@ -22,14 +23,14 @@ export const SigninPage = () => {
     });
 
     useEffect(() => {
-        if(isAuthenticated){
+        if (isAuthenticated) {
             navigate('/files');
         }
     }, [isAuthenticated]);
 
     return (
         <div className="container vh-100 d-flex align-items-center justify-content-center">
-            <div className="card shadow-lg p-4" style={{width: "100%", maxWidth: "400px"}}>
+            <div className="card shadow-lg p-4" style={{ width: "100%", maxWidth: "400px" }}>
                 <h1 className="text-center mb-4">Iniciar Sesión</h1>
                 <form onSubmit={onSubmit}>
                     <div className="mb-3">
@@ -39,7 +40,7 @@ export const SigninPage = () => {
                             name="username"
                             placeholder="Ingresa el username"
                             className="form-control"
-                            {...register("username", {required: true})}
+                            {...register("username", { required: true })}
                             autoComplete="off"
                         />
                     </div>
@@ -47,12 +48,23 @@ export const SigninPage = () => {
                     <div className="mb-3">
                         <label className="form-label">Password</label>
                         <input
-                            type="password"
+                            type={showPassword ? "text" : "password"}
                             placeholder="Ingresa el password"
                             className="form-control"
-                            {...register("password", {required: true})}
+                            {...register("password", { required: true })}
                             autoComplete="off"
                         />
+                    </div>
+
+                    <div className="mb-3 form-check">
+                        <input
+                            type="checkbox"
+                            className="form-check-input"
+                            id="showPassword"
+                            checked={showPassword}
+                            onChange={() => setShowPassword(!showPassword)}
+                        />
+                        <label className="form-check-label" htmlFor="showPassword">Mostrar Contraseña</label>
                     </div>
 
                     <button type="submit" className="btn btn-primary w-100">
