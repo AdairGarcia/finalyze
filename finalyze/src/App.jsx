@@ -6,10 +6,12 @@ import {MainPage} from "./pages/MainPage/MainPage.jsx";
 import {AuthProvider} from "./context/AuthContext.jsx";
 import ProtectedRoute from "./pages/ProtectedRoute/ProtectedRoute.jsx";
 import {ConfirmCodePage} from "./pages/ConfirmCodePage/ConfirmCodePage.jsx";
+import {FileProvider} from "./context/FileContext.jsx";
 
 function App(){
     return(
         <AuthProvider>
+            <FileProvider>
             <BrowserRouter>
                 <Routes>
                     <Route path={"/"} element={<HomePage />} />
@@ -23,6 +25,7 @@ function App(){
 
                 </Routes>
             </BrowserRouter>
+            </FileProvider>
         </AuthProvider>
     )
 }

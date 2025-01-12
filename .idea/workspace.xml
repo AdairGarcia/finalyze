@@ -4,10 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2d44afd2-2729-48cc-a1f9-38b9416f87c8" name="Changes" comment="Validaciones password /signup">
+    <list default="true" id="2d44afd2-2729-48cc-a1f9-38b9416f87c8" name="Changes" comment="Autenticaciones completas">
+      <change afterPath="$PROJECT_DIR$/finalyze/src/context/FileContext.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/finalyze/src/pages/SigninPage/SigninPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/finalyze/src/pages/SigninPage/SigninPage.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/finalyze/src/pages/SignupPage/SignupPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/finalyze/src/pages/SignupPage/SignupPage.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/finalyze/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/finalyze/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/finalyze/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/finalyze/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/finalyze/src/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/finalyze/src/App.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/finalyze/src/pages/MainPage/MainPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/finalyze/src/pages/MainPage/MainPage.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,8 +21,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="JavaScript File" />
-        <option value="JSX File" />
         <option value="CSS File" />
+        <option value="JSX File" />
       </list>
     </option>
   </component>
@@ -106,7 +109,9 @@
       <workItem from="1736621326172" duration="9416000" />
       <workItem from="1736632630748" duration="1573000" />
       <workItem from="1736651936539" duration="607000" />
-      <workItem from="1736652620021" duration="4176000" />
+      <workItem from="1736652620021" duration="5815000" />
+      <workItem from="1736658513567" duration="861000" />
+      <workItem from="1736659464092" duration="3581000" />
     </task>
     <task id="LOCAL-00001" summary="signs pages and routes">
       <option name="closed" value="true" />
@@ -188,7 +193,15 @@
       <option name="project" value="LOCAL" />
       <updated>1736656456574</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Autenticaciones completas">
+      <option name="closed" value="true" />
+      <created>1736656848647</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1736656848647</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -205,6 +218,7 @@
     <MESSAGE value="console logs eliminated" />
     <MESSAGE value="center homepage" />
     <MESSAGE value="Validaciones password /signup" />
-    <option name="LAST_COMMIT_MESSAGE" value="Validaciones password /signup" />
+    <MESSAGE value="Autenticaciones completas" />
+    <option name="LAST_COMMIT_MESSAGE" value="Autenticaciones completas" />
   </component>
 </project>
