@@ -4,13 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2d44afd2-2729-48cc-a1f9-38b9416f87c8" name="Changes" comment="console logs eliminated">
+    <list default="true" id="2d44afd2-2729-48cc-a1f9-38b9416f87c8" name="Changes" comment="center homepage">
+      <change afterPath="$PROJECT_DIR$/finalyze/src/pages/SignupPage/signupPage.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/finalyze/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/finalyze/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/finalyze/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/finalyze/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/finalyze/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/finalyze/src/index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/finalyze/src/main.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/finalyze/src/main.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/finalyze/src/pages/HomePage/HomePage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/finalyze/src/pages/HomePage/HomePage.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/finalyze/src/context/AuthContext.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/finalyze/src/context/AuthContext.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/finalyze/src/pages/SigninPage/SigninPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/finalyze/src/pages/SigninPage/SigninPage.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/finalyze/src/pages/SignupPage/SignupPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/finalyze/src/pages/SignupPage/SignupPage.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,6 +21,7 @@
       <list>
         <option value="JavaScript File" />
         <option value="JSX File" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -59,6 +59,7 @@
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;master&quot;,
     &quot;last_opened_file_path&quot;: &quot;/home/ada/Desktop/Programas/AWS/auth-finalyze&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -107,7 +108,7 @@
       <workItem from="1736621326172" duration="9416000" />
       <workItem from="1736632630748" duration="1573000" />
       <workItem from="1736651936539" duration="607000" />
-      <workItem from="1736652620021" duration="1165000" />
+      <workItem from="1736652620021" duration="3665000" />
     </task>
     <task id="LOCAL-00001" summary="signs pages and routes">
       <option name="closed" value="true" />
@@ -173,7 +174,15 @@
       <option name="project" value="LOCAL" />
       <updated>1736634401741</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="center homepage">
+      <option name="closed" value="true" />
+      <created>1736653911688</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1736653911688</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -188,6 +197,7 @@
     <MESSAGE value="signout functionality" />
     <MESSAGE value="auth functionality" />
     <MESSAGE value="console logs eliminated" />
-    <option name="LAST_COMMIT_MESSAGE" value="console logs eliminated" />
+    <MESSAGE value="center homepage" />
+    <option name="LAST_COMMIT_MESSAGE" value="center homepage" />
   </component>
 </project>
