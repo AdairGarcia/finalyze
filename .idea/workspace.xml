@@ -4,10 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2d44afd2-2729-48cc-a1f9-38b9416f87c8" name="Changes" comment="center homepage">
-      <change afterPath="$PROJECT_DIR$/finalyze/src/pages/SignupPage/signupPage.css" afterDir="false" />
+    <list default="true" id="2d44afd2-2729-48cc-a1f9-38b9416f87c8" name="Changes" comment="Validaciones password /signup">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/finalyze/src/context/AuthContext.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/finalyze/src/context/AuthContext.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/finalyze/src/pages/SigninPage/SigninPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/finalyze/src/pages/SigninPage/SigninPage.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/finalyze/src/pages/SignupPage/SignupPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/finalyze/src/pages/SignupPage/SignupPage.jsx" afterDir="false" />
     </list>
@@ -108,7 +106,7 @@
       <workItem from="1736621326172" duration="9416000" />
       <workItem from="1736632630748" duration="1573000" />
       <workItem from="1736651936539" duration="607000" />
-      <workItem from="1736652620021" duration="3665000" />
+      <workItem from="1736652620021" duration="4176000" />
     </task>
     <task id="LOCAL-00001" summary="signs pages and routes">
       <option name="closed" value="true" />
@@ -182,7 +180,15 @@
       <option name="project" value="LOCAL" />
       <updated>1736653911688</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Validaciones password /signup">
+      <option name="closed" value="true" />
+      <created>1736656456574</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1736656456574</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -198,6 +204,7 @@
     <MESSAGE value="auth functionality" />
     <MESSAGE value="console logs eliminated" />
     <MESSAGE value="center homepage" />
-    <option name="LAST_COMMIT_MESSAGE" value="center homepage" />
+    <MESSAGE value="Validaciones password /signup" />
+    <option name="LAST_COMMIT_MESSAGE" value="Validaciones password /signup" />
   </component>
 </project>

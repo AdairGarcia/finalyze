@@ -17,6 +17,7 @@ export const SignupPage = () => {
     uppercase: false,
     symbol: false,
   });
+  const [showPassword, setShowPassword] = useState(false);
 
   const onSubmit = handleSubmit(async (data) => {
     if (data.password !== data.confirmPassword) {
@@ -48,87 +49,98 @@ export const SignupPage = () => {
   };
 
   return (
-    <div
-      className="d-flex align-items-center justify-content-center"
-      style={{
-        minHeight: "100vh", // Asegura que cubra todo el alto visible
-        backgroundColor: "#f8f9fa", // Fondo blanco/gris claro
-        padding: "20px", // Espaciado para pantallas pequeñas
-      }}
-    >
-      <div className="card shadow-lg p-4" style={{ width: "100%", maxWidth: "400px" }}>
-        <h1 className="text-center mb-4">Regístrate</h1>
-        <form onSubmit={onSubmit}>
-          <div className="mb-3">
-            <label className="form-label">Correo Electrónico</label>
-            <input
-              type="email"
-              name="email"
-              placeholder="Correo@ejemplo.com"
-              className="form-control"
-              {...register("email", { required: true })}
-              autoComplete="off"
-            />
-          </div>
-
-          <div className="mb-3">
-            <label className="form-label">Nombre de Usuario</label>
-            <input
-              type="text"
-              name="username"
-              placeholder="Ingresa el username"
-              className="form-control"
-              {...register("username", { required: true })}
-              autoComplete="off"
-            />
-          </div>
-
-          <div className="mb-3">
-            <label className="form-label">Contraseña</label>
-            <input
-              type="password"
-              placeholder="Ingresa el password"
-              className="form-control"
-              {...register("password", { required: true })}
-              value={password}
-              onChange={handlePasswordChange}
-              onFocus={() => setShowValidations(true)}
-              autoComplete="off"
-            />
-          </div>
-          {showValidations && (
-            <div className="password-validations">
-              <p className={validations.length ? 'valid' : 'invalid'}>La contraseña debe tener al menos 8 caracteres</p>
-              <p className={validations.number ? 'valid' : 'invalid'}>Usa un número</p>
-              <p className={validations.lowercase ? 'valid' : 'invalid'}>Utiliza una letra minúscula</p>
-              <p className={validations.uppercase ? 'valid' : 'invalid'}>Utiliza una letra mayúscula</p>
-              <p className={validations.symbol ? 'valid' : 'invalid'}>Utiliza algún símbolo</p>
+      <div
+          className="d-flex align-items-center justify-content-center"
+          style={{
+            minHeight: "100vh", // Asegura que cubra todo el alto visible
+            backgroundColor: "#f8f9fa", // Fondo blanco/gris claro
+            padding: "20px", // Espaciado para pantallas pequeñas
+          }}
+      >
+        <div className="card shadow-lg p-4" style={{ width: "100%", maxWidth: "400px" }}>
+          <h1 className="text-center mb-4">Regístrate</h1>
+          <form onSubmit={onSubmit}>
+            <div className="mb-3">
+              <label className="form-label">Correo Electrónico</label>
+              <input
+                  type="email"
+                  name="email"
+                  placeholder="Correo@ejemplo.com"
+                  className="form-control"
+                  {...register("email", { required: true })}
+                  autoComplete="off"
+              />
             </div>
-          )}
 
-          <div className="mb-3">
-            <label className="form-label">Confirmar Contraseña</label>
-            <input
-              type="password"
-              placeholder="Confirma el password"
-              className="form-control"
-              {...register("confirmPassword", { required: true })}
-              autoComplete="off"
-            />
-          </div>
+            <div className="mb-3">
+              <label className="form-label">Nombre de Usuario</label>
+              <input
+                  type="text"
+                  name="username"
+                  placeholder="Ingresa el username"
+                  className="form-control"
+                  {...register("username", { required: true })}
+                  autoComplete="off"
+              />
+            </div>
 
-          <button type="submit" className="btn btn-primary w-100">
-            Registrarse
-          </button>
-        </form>
+            <div className="mb-3">
+              <label className="form-label">Contraseña</label>
+              <input
+                  type={showPassword ? "text" : "password"}
+                  placeholder="Ingresa el password"
+                  className="form-control"
+                  {...register("password", { required: true })}
+                  value={password}
+                  onChange={handlePasswordChange}
+                  onFocus={() => setShowValidations(true)}
+                  autoComplete="off"
+              />
+            </div>
+            {showValidations && (
+                <div className="password-validations">
+                  <p className={validations.length ? 'valid' : 'invalid'}>La contraseña debe tener al menos 8 caracteres</p>
+                  <p className={validations.number ? 'valid' : 'invalid'}>Usa un número</p>
+                  <p className={validations.lowercase ? 'valid' : 'invalid'}>Utiliza una letra minúscula</p>
+                  <p className={validations.uppercase ? 'valid' : 'invalid'}>Utiliza una letra mayúscula</p>
+                  <p className={validations.symbol ? 'valid' : 'invalid'}>Utiliza algún símbolo</p>
+                </div>
+            )}
 
-        <p className="text-center mt-3">
-          ¿Ya tienes una cuenta?{" "}
-          <Link to={"/signin"} className="text-decoration-none">
-            Ingresa aquí
-          </Link>
-        </p>
+            <div className="mb-3">
+              <label className="form-label">Confirmar Contraseña</label>
+              <input
+                  type={showPassword ? "text" : "password"}
+                  placeholder="Confirma el password"
+                  className="form-control"
+                  {...register("confirmPassword", { required: true })}
+                  autoComplete="off"
+              />
+            </div>
+
+            <div className="mb-3 form-check">
+              <input
+                  type="checkbox"
+                  className="form-check-input"
+                  id="showPassword"
+                  checked={showPassword}
+                  onChange={() => setShowPassword(!showPassword)}
+              />
+              <label className="form-check-label" htmlFor="showPassword">Mostrar Contraseña</label>
+            </div>
+
+            <button type="submit" className="btn btn-primary w-100">
+              Registrarse
+            </button>
+          </form>
+
+          <p className="text-center mt-3">
+            ¿Ya tienes una cuenta?{" "}
+            <Link to={"/signin"} className="text-decoration-none">
+              Ingresa aquí
+            </Link>
+          </p>
+        </div>
       </div>
-    </div>
   );
 };
