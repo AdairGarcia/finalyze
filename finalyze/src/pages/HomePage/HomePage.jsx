@@ -1,5 +1,4 @@
-import {useNavigate} from "react-router-dom";
-import "bootstrap/dist/css/bootstrap.min.css";
+import { useNavigate } from "react-router-dom";
 import "./HomePage.css";
 
 export const HomePage = () => {
@@ -12,7 +11,7 @@ export const HomePage = () => {
     return (
         <div className="container-fluid vh-100 d-flex flex-column">
             {/* Barra de navegación con botones */}
-            <nav className="navbar navbar-light bg-light">
+            <nav className="navbar navbar-light bg-light w-100">
                 <div className="container">
                     <button
                         className="btn btn-primary me-2"
@@ -37,9 +36,9 @@ export const HomePage = () => {
 
             {/* Imagen de fondo */}
             <div
-                className="bg-image"
+                className="bg-image w-100"
                 style={{
-                    backgroundImage: `url("/assets/finance-image.jpg")`, // Cambia esta URL
+                    backgroundImage: `url("/assets/finance-image.jpg")`,
                     backgroundSize: "cover",
                     backgroundPosition: "center",
                     height: "40vh",

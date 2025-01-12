@@ -4,10 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2d44afd2-2729-48cc-a1f9-38b9416f87c8" name="Changes" comment="">
+    <list default="true" id="2d44afd2-2729-48cc-a1f9-38b9416f87c8" name="Changes" comment="console logs eliminated">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/finalyze/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/finalyze/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/finalyze/src/pages/SigninPage/SigninPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/finalyze/src/pages/SigninPage/SigninPage.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/finalyze/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/finalyze/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/finalyze/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/finalyze/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/finalyze/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/finalyze/src/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/finalyze/src/main.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/finalyze/src/main.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/finalyze/src/pages/HomePage/HomePage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/finalyze/src/pages/HomePage/HomePage.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -102,7 +105,9 @@
       <workItem from="1736557983390" duration="6657000" />
       <workItem from="1736570300424" duration="4021000" />
       <workItem from="1736621326172" duration="9416000" />
-      <workItem from="1736632630748" duration="1196000" />
+      <workItem from="1736632630748" duration="1573000" />
+      <workItem from="1736651936539" duration="607000" />
+      <workItem from="1736652620021" duration="1165000" />
     </task>
     <task id="LOCAL-00001" summary="signs pages and routes">
       <option name="closed" value="true" />
@@ -160,7 +165,15 @@
       <option name="project" value="LOCAL" />
       <updated>1736628653853</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="console logs eliminated">
+      <option name="closed" value="true" />
+      <created>1736634401741</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1736634401741</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -174,6 +187,7 @@
     <MESSAGE value="isAuthenticated functionality" />
     <MESSAGE value="signout functionality" />
     <MESSAGE value="auth functionality" />
-    <option name="LAST_COMMIT_MESSAGE" value="auth functionality" />
+    <MESSAGE value="console logs eliminated" />
+    <option name="LAST_COMMIT_MESSAGE" value="console logs eliminated" />
   </component>
 </project>

@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "aws-jwt-verify": "^5.0.0",
+    "bootstrap": "^5.3.3",
     "cognito-jwt-verifier": "^2.0.0",
     "cognito-jwt-verify": "^0.2.0",
     "js-cookie": "^3.0.5",
