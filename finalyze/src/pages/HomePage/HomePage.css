@@ -1,0 +1,18 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+}
+
+.bg-image {
+    opacity: 0.9; /* Hace la imagen de fondo más tenue */
+}
+
+h1 {
+    color: #333;
+}
+
+.navbar {
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave para el navbar */
+}
