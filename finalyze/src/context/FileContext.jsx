@@ -1,4 +1,5 @@
-import {createContext, useContext, useState} from "react";
+import {createContext, useContext, useEffect, useState} from "react";
+import {useAuth} from "./AuthContext.jsx";
 
 export const FileContext = createContext();
 
@@ -14,6 +15,50 @@ export const FileProvider = ({children}) => {
     const [files, setFiles] = useState([]);
     const [file, setFile] = useState(null);
     const [uploadProgress, setUploadProgress] = useState(0);
+
+    const getUserFiles = async (username) => {
+        try {
+            const headers = new Headers({
+                'Content-Type': 'application/json',
+                'xtoken': username,
+                'stage': 'dev',
+                'resource': 'GET /files'
+            })
+
+            console.log('Headers:', headers);
+
+            const response = await fetch('https://rqt24i6itf.execute-api.us-east-1.amazonaws.com/dev/files', {
+                method: 'GET',
+                headers: headers
+            });
+
+            if (!response.ok) {
+                throw new Error('Failed to get user files');
+            }
+
+            const data = await response.json();
+            const body = JSON.parse(data.body);
+
+            // Function to append files to the list
+            const appendFiles = (fileList, newFiles) => {
+                newFiles.forEach(file => {
+                    fileList.push(file);
+                });
+            };
+
+            // Append the files from the response to the state
+            appendFiles(files, body);
+            setFiles([...files]); // Update the state with the new list
+
+
+            console.log('User files in files:', files);
+
+            return data;
+        } catch (error) {
+            console.error('Error getting user files:', error);
+            throw error;
+        }
+    };
 
     const uploadFile = async (selectedFile, username) => {
         try {
@@ -72,7 +117,8 @@ export const FileProvider = ({children}) => {
             setFile,
             setFiles,
             uploadProgress,
-            uploadFile
+            uploadFile,
+            getUserFiles
         }}>
             {children}
         </FileContext.Provider>
@@ -81,16 +127,19 @@ export const FileProvider = ({children}) => {
 const getPresignedUrl = async (fileName, fileType, username) => {
     try {
         console.log('Getting presigned URL for:', fileName, fileType);
+        const headers = new Headers({
+            'Content-Type': 'application/json',
+            'xtoken': username,
+            'stage': 'dev',
+            'resource': 'POST /files'
+        })
+
         const response = await fetch('https://rqt24i6itf.execute-api.us-east-1.amazonaws.com/dev/files', {
             method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
+            headers: headers,
             body: JSON.stringify({
                 fileName,
                 fileType,
-                username,
-                'stage': 'dev'
             })
         });
 
@@ -104,3 +153,5 @@ const getPresignedUrl = async (fileName, fileType, username) => {
         throw error;
     }
 };
+
+

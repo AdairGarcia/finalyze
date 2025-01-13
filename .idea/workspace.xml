@@ -4,7 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2d44afd2-2729-48cc-a1f9-38b9416f87c8" name="Changes" comment="Upload files" />
+    <list default="true" id="2d44afd2-2729-48cc-a1f9-38b9416f87c8" name="Changes" comment="Upload files">
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/finalyze/src/context/FileContext.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/finalyze/src/context/FileContext.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/finalyze/src/pages/MainPage/MainPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/finalyze/src/pages/MainPage/MainPage.jsx" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -52,15 +57,17 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/ada/Desktop/Programas/AWS/files&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/ada/Desktop/Programas/finalyze&quot;,
     &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.standard&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.standard&quot;: &quot;&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
     &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;settings.javascript.linters.eslint&quot;,
     &quot;ts.external.directory.path&quot;: &quot;/snap/webstorm/423/plugins/javascript-plugin/jsLanguageServicesImpl/external&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
@@ -108,6 +115,10 @@
       <workItem from="1736707246496" duration="9810000" />
       <workItem from="1736718693196" duration="1128000" />
       <workItem from="1736728528531" duration="4404000" />
+      <workItem from="1736735520382" duration="286000" />
+      <workItem from="1736737254106" duration="617000" />
+      <workItem from="1736739820480" duration="3731000" />
+      <workItem from="1736744347530" duration="4279000" />
     </task>
     <task id="LOCAL-00001" summary="signs pages and routes">
       <option name="closed" value="true" />

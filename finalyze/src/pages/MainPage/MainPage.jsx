@@ -1,12 +1,12 @@
-import {useAuth} from "../../context/AuthContext.jsx";
-import {useNavigate} from "react-router-dom";
-import {useFile} from "../../context/FileContext.jsx";
-import {useForm} from "react-hook-form";
+import { useAuth } from "../../context/AuthContext.jsx";
+import { useNavigate } from "react-router-dom";
+import { useFile } from "../../context/FileContext.jsx";
+import { useForm } from "react-hook-form";
 
 export const MainPage = () => {
     const { signout, user } = useAuth();
     const navigate = useNavigate();
-    const { file, files, setFile, uploadFile} = useFile();
+    const { file, files, setFile, uploadFile, getUserFiles } = useFile();
     const { register, handleSubmit } = useForm();
 
     const handleSignout = async () => {
@@ -18,6 +18,15 @@ export const MainPage = () => {
         }
     }
 
+    const handleViewFiles = async () => {
+        try {
+            console.log("user: ", user);
+            const files = await getUserFiles(user);
+            console.log(files);
+        } catch (error) {
+            console.error("Error al obtener archivos", error);
+        }
+    }
 
     const onSubmit = handleSubmit(async (data) => {
         try {
@@ -46,10 +55,23 @@ export const MainPage = () => {
                     </button>
                 </form>
             </div>
-            <button>	
-                Subir archivo
+
+            <button onClick={handleViewFiles}>
+                Ver archivos
             </button>
 
+            <div>
+                <h2>Uploaded Files</h2>
+                <ul>
+                    {files.map((file, index) => (
+                        <li key={index}>
+                            {Object.entries(file).map(([key, value]) => (
+                                <div key={key}>{key}: {value}</div>
+                            ))}
+                        </li>
+                    ))}
+                </ul>
+            </div>
         </div>
     );
 };
