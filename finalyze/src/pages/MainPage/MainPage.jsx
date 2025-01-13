@@ -1,13 +1,12 @@
 import {useAuth} from "../../context/AuthContext.jsx";
 import {useNavigate} from "react-router-dom";
-import * as XLSX from "xlsx";
 import {useFile} from "../../context/FileContext.jsx";
 import {useForm} from "react-hook-form";
 
 export const MainPage = () => {
-    const { signout } = useAuth();
+    const { signout, user } = useAuth();
     const navigate = useNavigate();
-    const { file, files, fileUpload, setFile} = useFile();
+    const { file, files, setFile, uploadFile} = useFile();
     const { register, handleSubmit } = useForm();
 
     const handleSignout = async () => {
@@ -19,15 +18,13 @@ export const MainPage = () => {
         }
     }
 
+
     const onSubmit = handleSubmit(async (data) => {
         try {
             console.log(data);
             console.log(data.file)
-            const formData = new FormData();
-            formData.append('file', data.file[0]);
-            console.log(formData)
-
-
+            const info = await uploadFile(data.file[0], user);
+            console.log(info);
         } catch (error) {
             console.error("Error al subir archivo", error);
         }
@@ -41,7 +38,7 @@ export const MainPage = () => {
             </button>
             <div>
                 <form onSubmit={onSubmit}>
-                    <input type="file" accept=".xlsx, .xls"
+                    <input type="file" accept=".xlsx, .xls" name={"file"}
                            {...register("file", { required: true })}
                     />
                     <button type={"submit"}>

@@ -4,14 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2d44afd2-2729-48cc-a1f9-38b9416f87c8" name="Changes" comment="Autenticaciones completas">
-      <change afterPath="$PROJECT_DIR$/finalyze/src/context/FileContext.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/finalyze/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/finalyze/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/finalyze/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/finalyze/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/finalyze/src/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/finalyze/src/App.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/finalyze/src/pages/MainPage/MainPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/finalyze/src/pages/MainPage/MainPage.jsx" afterDir="false" />
-    </list>
+    <list default="true" id="2d44afd2-2729-48cc-a1f9-38b9416f87c8" name="Changes" comment="Upload files" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -59,7 +52,7 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/ada/Desktop/Programas/AWS/auth-finalyze&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/ada/Desktop/Programas/AWS/files&quot;,
     &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
@@ -111,7 +104,10 @@
       <workItem from="1736651936539" duration="607000" />
       <workItem from="1736652620021" duration="5815000" />
       <workItem from="1736658513567" duration="861000" />
-      <workItem from="1736659464092" duration="3581000" />
+      <workItem from="1736659464092" duration="3844000" />
+      <workItem from="1736707246496" duration="9810000" />
+      <workItem from="1736718693196" duration="1128000" />
+      <workItem from="1736728528531" duration="4404000" />
     </task>
     <task id="LOCAL-00001" summary="signs pages and routes">
       <option name="closed" value="true" />
@@ -201,7 +197,23 @@
       <option name="project" value="LOCAL" />
       <updated>1736656848647</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="first aproach to upload file">
+      <option name="closed" value="true" />
+      <created>1736663422555</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1736663422555</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Upload files">
+      <option name="closed" value="true" />
+      <created>1736733882328</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1736733882329</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -219,6 +231,8 @@
     <MESSAGE value="center homepage" />
     <MESSAGE value="Validaciones password /signup" />
     <MESSAGE value="Autenticaciones completas" />
-    <option name="LAST_COMMIT_MESSAGE" value="Autenticaciones completas" />
+    <MESSAGE value="first aproach to upload file" />
+    <MESSAGE value="Upload files" />
+    <option name="LAST_COMMIT_MESSAGE" value="Upload files" />
   </component>
 </project>
