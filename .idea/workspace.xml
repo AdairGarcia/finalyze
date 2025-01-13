@@ -4,12 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2d44afd2-2729-48cc-a1f9-38b9416f87c8" name="Changes" comment="first aproach to upload file">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/finalyze/src/context/AuthContext.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/finalyze/src/context/AuthContext.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/finalyze/src/context/FileContext.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/finalyze/src/context/FileContext.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/finalyze/src/pages/MainPage/MainPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/finalyze/src/pages/MainPage/MainPage.jsx" afterDir="false" />
-    </list>
+    <list default="true" id="2d44afd2-2729-48cc-a1f9-38b9416f87c8" name="Changes" comment="Upload files" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -112,7 +107,7 @@
       <workItem from="1736659464092" duration="3844000" />
       <workItem from="1736707246496" duration="9810000" />
       <workItem from="1736718693196" duration="1128000" />
-      <workItem from="1736728528531" duration="4102000" />
+      <workItem from="1736728528531" duration="4404000" />
     </task>
     <task id="LOCAL-00001" summary="signs pages and routes">
       <option name="closed" value="true" />
@@ -210,7 +205,15 @@
       <option name="project" value="LOCAL" />
       <updated>1736663422555</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Upload files">
+      <option name="closed" value="true" />
+      <created>1736733882328</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1736733882329</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -229,6 +232,7 @@
     <MESSAGE value="Validaciones password /signup" />
     <MESSAGE value="Autenticaciones completas" />
     <MESSAGE value="first aproach to upload file" />
-    <option name="LAST_COMMIT_MESSAGE" value="first aproach to upload file" />
+    <MESSAGE value="Upload files" />
+    <option name="LAST_COMMIT_MESSAGE" value="Upload files" />
   </component>
 </project>
