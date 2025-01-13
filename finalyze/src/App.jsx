@@ -18,7 +18,6 @@ function App(){
                     <Route path={"/signup"} element={<SignupPage />} />
                     <Route path={"/signin"} element={<SigninPage />} />
                     <Route path={"/signup/code"} element={<ConfirmCodePage />} />
-
                     <Route element={<ProtectedRoute/>}>
                         <Route path={"/files"} element={<MainPage />} />
                     </Route>
