@@ -88,7 +88,7 @@ export const AuthProvider = ({children}) => {
     }
 
     const signin = async (username, password) => {
-        try{
+        try {
             const response = await fetch('https://rqt24i6itf.execute-api.us-east-1.amazonaws.com/dev/signin', {
                 method: 'POST',
                 headers: {
@@ -102,13 +102,12 @@ export const AuthProvider = ({children}) => {
                 const error = await response.json();
                 throw new Error(error.message);
             }
-
+    
             const data = await response.json();
             const body = JSON.parse(data.body);
-            console.log("Body: ", body);
-
+            console.log("Tokens recibidos en signin:", body.tokens); // <-- Log del token
+    
             if(data.statusCode === 200){
-                console.log("Inicio de sesión exitoso");
                 setToken(body.tokens);
                 setUser(body.username);
                 setIsAuthenticated(true);
@@ -120,8 +119,8 @@ export const AuthProvider = ({children}) => {
             setToken(null);
             throw error;
         }
-    }
-
+    };
+    
     const signout = async () => {
         try {
             await fetch('https://rqt24i6itf.execute-api.us-east-1.amazonaws.com/dev/signout', {
