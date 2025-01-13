@@ -6,8 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="2d44afd2-2729-48cc-a1f9-38b9416f87c8" name="Changes" comment="first aproach to upload file">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/finalyze/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/finalyze/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/finalyze/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/finalyze/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/finalyze/src/context/AuthContext.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/finalyze/src/context/AuthContext.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/finalyze/src/context/FileContext.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/finalyze/src/context/FileContext.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/finalyze/src/pages/MainPage/MainPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/finalyze/src/pages/MainPage/MainPage.jsx" afterDir="false" />
     </list>
@@ -113,6 +112,7 @@
       <workItem from="1736659464092" duration="3844000" />
       <workItem from="1736707246496" duration="9810000" />
       <workItem from="1736718693196" duration="1128000" />
+      <workItem from="1736728528531" duration="4102000" />
     </task>
     <task id="LOCAL-00001" summary="signs pages and routes">
       <option name="closed" value="true" />
@@ -230,16 +230,5 @@
     <MESSAGE value="Autenticaciones completas" />
     <MESSAGE value="first aproach to upload file" />
     <option name="LAST_COMMIT_MESSAGE" value="first aproach to upload file" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/finalyze/src/context/AuthContext.jsx</url>
-          <line>123</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

@@ -4,7 +4,7 @@ import {useFile} from "../../context/FileContext.jsx";
 import {useForm} from "react-hook-form";
 
 export const MainPage = () => {
-    const { signout } = useAuth();
+    const { signout, user } = useAuth();
     const navigate = useNavigate();
     const { file, files, setFile, uploadFile} = useFile();
     const { register, handleSubmit } = useForm();
@@ -23,7 +23,7 @@ export const MainPage = () => {
         try {
             console.log(data);
             console.log(data.file)
-            const info = await uploadFile(data.file[0]);
+            const info = await uploadFile(data.file[0], user);
             console.log(info);
         } catch (error) {
             console.error("Error al subir archivo", error);

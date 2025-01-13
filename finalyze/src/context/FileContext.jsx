@@ -13,22 +13,20 @@ export const useFile = () => {
 export const FileProvider = ({children}) => {
     const [files, setFiles] = useState([]);
     const [file, setFile] = useState(null);
-    const [uploading, setUploading] = useState(false);
     const [uploadProgress, setUploadProgress] = useState(0);
 
-
-    const uploadFile = async (selectedFile) => {
+    const uploadFile = async (selectedFile, username) => {
         try {
             if (!selectedFile) {
                 throw new Error('No file selected');
             }
 
-            setUploading(true);
             setUploadProgress(0);
 
             const data = await getPresignedUrl(
                 selectedFile.name,
-                selectedFile.type
+                selectedFile.type,
+                username
             );
             const body = JSON.parse(data.body);
             console.log(body);
@@ -36,7 +34,6 @@ export const FileProvider = ({children}) => {
             const { presignedUrl, key } = body;
 
             console.log('Uploading file to s3 with:', presignedUrl);
-
 
             await fetch(presignedUrl, {
                 method: 'PUT',
@@ -64,7 +61,6 @@ export const FileProvider = ({children}) => {
             console.error('Error uploading file:', error);
             throw error;
         } finally {
-            setUploading(false);
             setUploadProgress(0);
         }
     };
@@ -82,7 +78,7 @@ export const FileProvider = ({children}) => {
         </FileContext.Provider>
     )
 }
-const getPresignedUrl = async (fileName, fileType) => {
+const getPresignedUrl = async (fileName, fileType, username) => {
     try {
         console.log('Getting presigned URL for:', fileName, fileType);
         const response = await fetch('https://rqt24i6itf.execute-api.us-east-1.amazonaws.com/dev/files', {
@@ -92,7 +88,9 @@ const getPresignedUrl = async (fileName, fileType) => {
             },
             body: JSON.stringify({
                 fileName,
-                fileType
+                fileType,
+                username,
+                'stage': 'dev'
             })
         });
 
@@ -106,4 +104,3 @@ const getPresignedUrl = async (fileName, fileType) => {
         throw error;
     }
 };
-

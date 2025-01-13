@@ -151,7 +151,7 @@ export const AuthProvider = ({children}) => {
         const initializeAuth = async () => {
             if (token && token.accessToken) {
                 const tokenValidated = await validateToken(token.accessToken);
-                if (tokenValidated) {
+                if (tokenValidated && !tokenValidated.failedAssertion) {
                     setIsAuthenticated(true);
                     setUser(tokenValidated.username);
                 } else {
