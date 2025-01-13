@@ -16,8 +16,9 @@ export const AuthProvider = ({children}) => {
     const [isAuthenticated, setIsAuthenticated] = useState(false);
     const [user, setUser] = useState(null);
     const [token, setToken] = useState(() => {
-        return Cookies.get('token') ? JSON.parse(Cookies.get('token')) : null;
-    });
+    const tokenCookie = Cookies.get('token');
+    return tokenCookie ? JSON.parse(tokenCookie) : null;
+});
 
     useEffect(() => {
         Cookies.set('token', JSON.stringify(token));
@@ -127,7 +128,7 @@ export const AuthProvider = ({children}) => {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
-                    'xToken': token.accessToken
+                    'xToken': token?.accessToken
                 },
                 body: JSON.stringify({path: '/signout', httpMethod: 'POST'})
             });
