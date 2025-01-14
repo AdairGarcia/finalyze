@@ -4,15 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2d44afd2-2729-48cc-a1f9-38b9416f87c8" name="Changes" comment="getFiles from one user">
-      <change afterPath="$PROJECT_DIR$/finalyze/src/pages/FileDetailPage/FileDetailPage.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/finalyze/src/pages/MainPage/Components/ContainerFile.jsx" afterDir="false" />
+    <list default="true" id="2d44afd2-2729-48cc-a1f9-38b9416f87c8" name="Changes" comment="getFile from one user">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/finalyze/src/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/finalyze/src/App.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/finalyze/src/context/AuthContext.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/finalyze/src/context/AuthContext.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/finalyze/src/context/FileContext.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/finalyze/src/context/FileContext.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/finalyze/src/pages/MainPage/MainPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/finalyze/src/pages/MainPage/MainPage.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/finalyze/src/pages/ProtectedRoute/ProtectedRoute.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/finalyze/src/pages/ProtectedRoute/ProtectedRoute.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/finalyze/src/pages/FileDetailPage/FileDetailPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/finalyze/src/pages/FileDetailPage/FileDetailPage.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -125,7 +121,11 @@
       <workItem from="1736744347530" duration="4501000" />
       <workItem from="1736813257960" duration="115000" />
       <workItem from="1736813467733" duration="4773000" />
-      <workItem from="1736818669600" duration="748000" />
+      <workItem from="1736818669600" duration="2249000" />
+      <workItem from="1736827848749" duration="789000" />
+      <workItem from="1736829624552" duration="245000" />
+      <workItem from="1736829986891" duration="1206000" />
+      <workItem from="1736831531526" duration="620000" />
     </task>
     <task id="LOCAL-00001" summary="signs pages and routes">
       <option name="closed" value="true" />
@@ -239,7 +239,15 @@
       <option name="project" value="LOCAL" />
       <updated>1736748716522</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="getFile from one user">
+      <option name="closed" value="true" />
+      <created>1736819464395</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1736819464395</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -260,6 +268,7 @@
     <MESSAGE value="first aproach to upload file" />
     <MESSAGE value="Upload files" />
     <MESSAGE value="getFiles from one user" />
-    <option name="LAST_COMMIT_MESSAGE" value="getFiles from one user" />
+    <MESSAGE value="getFile from one user" />
+    <option name="LAST_COMMIT_MESSAGE" value="getFile from one user" />
   </component>
 </project>

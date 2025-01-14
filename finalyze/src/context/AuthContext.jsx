@@ -151,7 +151,6 @@ export const AuthProvider = ({children}) => {
         };
 
         const initializeAuth = async () => {
-            console.log("Verificando token");
             if(!token){
                 setLoading(false);
                 setIsAuthenticated(false);
@@ -172,7 +171,7 @@ export const AuthProvider = ({children}) => {
                     setToken(null);
                 }
             }
-            console.log("Token verificado,", loading);
+            console.log("Token verificado: ");
         };
 
         initializeAuth();
