@@ -5,7 +5,7 @@ import {useAuth} from "../../context/AuthContext.jsx";
 
 export const FileDetailPage = () => {
     const { fileId } = useParams();
-    const { file, getUserFile, getMovements } = useFile();
+    const { file, getUserFile, getMovements, getPercentils } = useFile();
     const { user } = useAuth();
 
     const handleOnMovements = async () => {
@@ -16,6 +16,15 @@ export const FileDetailPage = () => {
             console.error("Error al obtener movimientos", error);
         }
     };
+
+    const handleOnPercentils = async () => {
+        try {
+            const percentils = await getPercentils(user, fileId);
+            console.log("percentils:", percentils);
+        } catch (error) {
+            console.error("Error al obtener percentiles", error);
+        }
+    }
 
     useEffect(() => {
         getUserFile(user, fileId);
@@ -31,9 +40,11 @@ export const FileDetailPage = () => {
             {Object.entries(file).map(([key, value]) => (
                 <div key={key}>{key}: {value}</div>
             ))}
-
             <button onClick={handleOnMovements}>
                 Ver movimientos
+            </button>
+            <button onClick={handleOnPercentils}>
+                Calcular percentiles
             </button>
         </div>
     );

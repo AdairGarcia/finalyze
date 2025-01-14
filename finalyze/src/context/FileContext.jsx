@@ -155,6 +155,35 @@ export const FileProvider = ({children}) => {
         }
     };
 
+    const getPercentils = async (username, key) => {
+        try {
+            const decodedFileId = decodeURIComponent(key);
+            const newKey = decodedFileId.slice(4);
+            console.log('Getting percentilss for:', newKey);
+            const headers = new Headers({
+                'Content-Type': 'application/json',
+                'xtoken': username,
+                'stage': 'dev',
+                'resource': 'GET /files/:id/percentils',
+                'key': newKey
+            });
+            const response = await fetch('https://rqt24i6itf.execute-api.us-east-1.amazonaws.com/dev/files/{idFile}/percentils', {
+                method: 'GET',
+                headers: headers
+            });
+            if (!response.ok) {
+                throw new Error('Failed to get percentils');
+            }
+
+            const data = await response.json();
+            const body = JSON.parse(data.body);
+            return body
+        } catch (error) {
+            console.error('Error getting movements:', error);
+            throw error;
+        }
+    };
+
     return(
         <FileContext.Provider value={{
             file,
@@ -165,7 +194,8 @@ export const FileProvider = ({children}) => {
             uploadFile,
             getUserFile,
             getUserFiles,
-            getMovements
+            getMovements,
+            getPercentils
         }}>
             {children}
         </FileContext.Provider>
