@@ -21,6 +21,7 @@ export const FileDetailPage = () => {
             setMovements(fetchedMovements);
         } catch (error) {
             console.error("Error al obtener movimientos", error);
+            setMovements([]);
         } finally {
             setLoadingMovements(false);
         }
@@ -33,6 +34,7 @@ export const FileDetailPage = () => {
             setPercentils(fetchedPercentils);
         } catch (error) {
             console.error("Error al obtener percentiles", error);
+            setPercentiles([]);
         } finally {
             setLoadingPercentils(false);
         }
@@ -51,7 +53,7 @@ export const FileDetailPage = () => {
             <h1>Detalles del Archivo</h1>
             <div className="card shadow p-4 mb-4">
                 {Object.entries(file).map(([key, value]) => (
-                    <div key={key} className="mb-2">
+                    <div key={key} className="mb-2">{key}: {value}
                         <strong>{key}:</strong> {value}
                     </div>
                 ))}
@@ -64,6 +66,12 @@ export const FileDetailPage = () => {
                 >
                     {loadingMovements ? "Cargando movimientos..." : "Ver Movimientos"}
                 </button>
+                {movements && ( 
+                    <div>
+                        <h2>Movimientos:</h2>
+                        <pre>{JSON.stringify(movements, null, 2)}</pre> {/* Formato legible */}
+                    </div>
+                )}
                 <button 
                     onClick={handleOnPercentils} 
                     className="btn btn-secondary"
@@ -71,6 +79,7 @@ export const FileDetailPage = () => {
                 >
                     {loadingPercentils ? "Calculando percentiles..." : "Calcular Percentiles"}
                 </button>
+                
             </div>
             {movements.length > 0 && (
                 <div className="card shadow p-4 mb-4">
