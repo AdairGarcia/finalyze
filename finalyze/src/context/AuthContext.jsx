@@ -18,6 +18,7 @@ export const AuthProvider = ({children}) => {
     const [token, setToken] = useState(() => {
         return Cookies.get('token') ? JSON.parse(Cookies.get('token')) : null;
     });
+    const [loading, setLoading] = useState(true);
 
     useEffect(() => {
         Cookies.set('token', JSON.stringify(token));
@@ -144,22 +145,33 @@ export const AuthProvider = ({children}) => {
             try {
                 return await verifier.verify(token);
             } catch (error) {
+                setLoading(false);
                 return error;
             }
         };
 
         const initializeAuth = async () => {
+            if(!token){
+                setLoading(false);
+                setIsAuthenticated(false);
+                setUser(null);
+                return null;
+            }
+
             if (token && token.accessToken) {
                 const tokenValidated = await validateToken(token.accessToken);
                 if (tokenValidated && !tokenValidated.failedAssertion) {
                     setIsAuthenticated(true);
                     setUser(tokenValidated.username);
+                    setLoading(false);
                 } else {
+                    setLoading(false);
                     setIsAuthenticated(false);
                     setUser(null);
                     setToken(null);
                 }
             }
+            console.log("Token verificado: ");
         };
 
         initializeAuth();
@@ -173,7 +185,8 @@ export const AuthProvider = ({children}) => {
             signout,
             isAuthenticated,
             user,
-            token
+            token,
+            loading
         }}>
             {children}
         </AuthContext.Provider>

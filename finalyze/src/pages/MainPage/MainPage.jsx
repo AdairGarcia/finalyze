@@ -2,6 +2,7 @@ import { useAuth } from "../../context/AuthContext.jsx";
 import { useNavigate } from "react-router-dom";
 import { useFile } from "../../context/FileContext.jsx";
 import { useForm } from "react-hook-form";
+import {ContainerFile} from "./Components/ContainerFile.jsx";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { useState } from "react";
 
@@ -22,21 +23,10 @@ export const MainPage = () => {
         }
     }
 
-    const toggleViewFiles = async () => {
-        if (!showFiles) {
-            try {
-                await getUserFiles(user);
-            } catch (error) {
-                console.error("Error al obtener archivos", error);
-            }
-        }
-        setShowFiles(!showFiles);
-    }
-
-    const handleDeleteFile = async (fileId) => {
+    const handleViewFiles = async () => {
         try {
-            await deleteFile(fileId);
-            setFiles((prevFiles) => prevFiles.filter(file => file.id !== fileId));
+            const files = await getUserFiles(user);
+            console.log("files:", files);
         } catch (error) {
             console.error("Error al eliminar archivo", error);
         }
@@ -103,49 +93,18 @@ export const MainPage = () => {
                 </button>
             </div>
 
-            {showFiles && (
-                <div className="container mt-5">
-                    <h2>Uploaded Files</h2>
-                    <ul className="list-group">
-                        {files.map((file, index) => (
-                            <li key={index} className="list-group-item d-flex justify-content-between align-items-center">
-                                <div>
-                                    {Object.entries(file).map(([key, value]) => (
-                                        <div key={key}>{key}: {value}</div>
-                                    ))}
-                                </div>
-                                <div className="d-flex">
-                                    <button 
-                                        className="btn btn-info btn-sm me-2" 
-                                        onClick={() => navigate('/dashboard')}
-                                    >
-                                        Analyze
-                                    </button>
-                                    <button 
-                                        className="btn btn-danger btn-sm" 
-                                        onClick={() => handleDeleteFile(file.id)}
-                                    >
-                                        Delete
-                                    </button>
-                                </div>
-                            </li>
-                        ))}
-                    </ul>
-                </div>
-            )}
+            <button onClick={handleViewFiles}>
+                Ver archivos
+            </button>
 
-            <footer className="container-fluid bg-dark text-light text-center p-3 mt-auto">
-                <p>
-                    <a
-                        href="https://github.com/AdairGarcia/finalyze.git"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-light"
-                    >
-                        GitHub Repository
-                    </a>
-                </p>
-            </footer>
+            <div>
+                <h2>Uploaded Files</h2>
+                    {files.map((file, index) => (
+                        <div key={index}>
+                            <ContainerFile file={file}/>
+                        </div>
+                    ))}
+            </div>
         </div>
     );
 };

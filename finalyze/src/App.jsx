@@ -7,6 +7,7 @@ import {AuthProvider} from "./context/AuthContext.jsx";
 import ProtectedRoute from "./pages/ProtectedRoute/ProtectedRoute.jsx";
 import {ConfirmCodePage} from "./pages/ConfirmCodePage/ConfirmCodePage.jsx";
 import {FileProvider} from "./context/FileContext.jsx";
+import {FileDetailPage} from "./pages/FileDetailPage/FileDetailPage.jsx";
 
 function App(){
     return(
@@ -20,6 +21,7 @@ function App(){
                     <Route path={"/signup/code"} element={<ConfirmCodePage />} />
                     <Route element={<ProtectedRoute/>}>
                         <Route path={"/files"} element={<MainPage />} />
+                        <Route path={"/file/:fileId"} element={<FileDetailPage />} />
                     </Route>
 
                 </Routes>
