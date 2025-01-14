@@ -49,12 +49,15 @@ export const SignupPage = () => {
   };
 
   return (
+     
       <div
-          className="d-flex align-items-center justify-content-center"
+          className="vh-100 vw-100 d-flex align-items-center justify-content-center"
           style={{
             minHeight: "100vh", // Asegura que cubra todo el alto visible
-            backgroundColor: "#f8f9fa", // Fondo blanco/gris claro
+            //backgroundColor: "#f8f9fa", // Fondo blanco/gris claro
             padding: "20px", // Espaciado para pantallas pequeñas
+            background: "linear-gradient(to top, #1e3c72, #2a5298, #ffffff)",
+            color: "#ffffff",
           }}
       >
         <div className="card shadow-lg p-4" style={{ width: "100%", maxWidth: "400px" }}>

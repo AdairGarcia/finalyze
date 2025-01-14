@@ -2,6 +2,7 @@ import { useForm } from 'react-hook-form';
 import { useAuth } from "../../context/AuthContext.jsx";
 import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import "./SigninPage.css";
 
 export const SigninPage = () => {
     const { register, handleSubmit } = useForm();
@@ -29,7 +30,13 @@ export const SigninPage = () => {
     }, [isAuthenticated]);
 
     return (
-        <div className="container vh-100 d-flex align-items-center justify-content-center">
+        <div 
+            className="vh-100 vw-100 d-flex align-items-center justify-content-center"
+            style={{
+                background: "linear-gradient(to top, #1e3c72, #2a5298, #ffffff)",
+                color: "#ffffff",
+            }}
+        >
             <div className="card shadow-lg p-4" style={{ width: "100%", maxWidth: "400px" }}>
                 <h1 className="text-center mb-4">Iniciar Sesión</h1>
                 <form onSubmit={onSubmit}>
