@@ -4,11 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2d44afd2-2729-48cc-a1f9-38b9416f87c8" name="Changes" comment="Upload files">
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
+    <list default="true" id="2d44afd2-2729-48cc-a1f9-38b9416f87c8" name="Changes" comment="getFiles from one user">
+      <change afterPath="$PROJECT_DIR$/finalyze/src/pages/FileDetailPage/FileDetailPage.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/finalyze/src/pages/MainPage/Components/ContainerFile.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/finalyze/src/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/finalyze/src/App.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/finalyze/src/context/AuthContext.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/finalyze/src/context/AuthContext.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/finalyze/src/context/FileContext.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/finalyze/src/context/FileContext.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/finalyze/src/pages/MainPage/MainPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/finalyze/src/pages/MainPage/MainPage.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/finalyze/src/pages/ProtectedRoute/ProtectedRoute.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/finalyze/src/pages/ProtectedRoute/ProtectedRoute.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,7 +61,7 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/ada/Desktop/Programas/finalyze&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/ada/Desktop/Programas/AWS/files&quot;,
     &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.standard&quot;: &quot;true&quot;,
@@ -118,7 +122,10 @@
       <workItem from="1736735520382" duration="286000" />
       <workItem from="1736737254106" duration="617000" />
       <workItem from="1736739820480" duration="3731000" />
-      <workItem from="1736744347530" duration="4279000" />
+      <workItem from="1736744347530" duration="4501000" />
+      <workItem from="1736813257960" duration="115000" />
+      <workItem from="1736813467733" duration="4773000" />
+      <workItem from="1736818669600" duration="748000" />
     </task>
     <task id="LOCAL-00001" summary="signs pages and routes">
       <option name="closed" value="true" />
@@ -224,7 +231,15 @@
       <option name="project" value="LOCAL" />
       <updated>1736733882329</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="getFiles from one user">
+      <option name="closed" value="true" />
+      <created>1736748716521</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1736748716522</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -244,6 +259,7 @@
     <MESSAGE value="Autenticaciones completas" />
     <MESSAGE value="first aproach to upload file" />
     <MESSAGE value="Upload files" />
-    <option name="LAST_COMMIT_MESSAGE" value="Upload files" />
+    <MESSAGE value="getFiles from one user" />
+    <option name="LAST_COMMIT_MESSAGE" value="getFiles from one user" />
   </component>
 </project>

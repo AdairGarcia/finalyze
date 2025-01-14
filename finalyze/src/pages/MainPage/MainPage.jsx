@@ -2,6 +2,7 @@ import { useAuth } from "../../context/AuthContext.jsx";
 import { useNavigate } from "react-router-dom";
 import { useFile } from "../../context/FileContext.jsx";
 import { useForm } from "react-hook-form";
+import {ContainerFile} from "./Components/ContainerFile.jsx";
 
 export const MainPage = () => {
     const { signout, user } = useAuth();
@@ -20,9 +21,8 @@ export const MainPage = () => {
 
     const handleViewFiles = async () => {
         try {
-            console.log("user: ", user);
             const files = await getUserFiles(user);
-            console.log(files);
+            console.log("files:", files);
         } catch (error) {
             console.error("Error al obtener archivos", error);
         }
@@ -62,15 +62,11 @@ export const MainPage = () => {
 
             <div>
                 <h2>Uploaded Files</h2>
-                <ul>
                     {files.map((file, index) => (
-                        <li key={index}>
-                            {Object.entries(file).map(([key, value]) => (
-                                <div key={key}>{key}: {value}</div>
-                            ))}
-                        </li>
+                        <div key={index}>
+                            <ContainerFile file={file}/>
+                        </div>
                     ))}
-                </ul>
             </div>
         </div>
     );

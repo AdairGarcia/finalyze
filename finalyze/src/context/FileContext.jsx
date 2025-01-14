@@ -1,5 +1,4 @@
-import {createContext, useContext, useEffect, useState} from "react";
-import {useAuth} from "./AuthContext.jsx";
+import {createContext, useContext, useState} from "react";
 
 export const FileContext = createContext();
 
@@ -16,6 +15,29 @@ export const FileProvider = ({children}) => {
     const [file, setFile] = useState(null);
     const [uploadProgress, setUploadProgress] = useState(0);
 
+    const getUserFile = async (username, key) => {
+        const decodedFileId = decodeURIComponent(key);
+        const headers = new Headers({
+            'Content-Type': 'application/json',
+            'xtoken': username,
+            'stage': 'dev',
+            'resource': 'GET /files/:id',
+            'key': decodedFileId
+        });
+
+        const response = await fetch('https://rqt24i6itf.execute-api.us-east-1.amazonaws.com/dev/files/{idFile}', {
+            method: 'GET',
+            headers: headers
+        });
+        if (!response.ok) {
+            throw new Error('Failed to get user files');
+        }
+
+        const data = await response.json();
+        const body = JSON.parse(data.body);
+        setFile(body[0]);
+    }
+
     const getUserFiles = async (username) => {
         try {
             const headers = new Headers({
@@ -24,8 +46,6 @@ export const FileProvider = ({children}) => {
                 'stage': 'dev',
                 'resource': 'GET /files'
             })
-
-            console.log('Headers:', headers);
 
             const response = await fetch('https://rqt24i6itf.execute-api.us-east-1.amazonaws.com/dev/files', {
                 method: 'GET',
@@ -46,12 +66,8 @@ export const FileProvider = ({children}) => {
                 });
             };
 
-            // Append the files from the response to the state
             appendFiles(files, body);
-            setFiles([...files]); // Update the state with the new list
-
-
-            console.log('User files in files:', files);
+            setFiles([...files]);
 
             return data;
         } catch (error) {
@@ -118,6 +134,7 @@ export const FileProvider = ({children}) => {
             setFiles,
             uploadProgress,
             uploadFile,
+            getUserFile,
             getUserFiles
         }}>
             {children}
