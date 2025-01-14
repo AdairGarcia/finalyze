@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { useFile } from "../../context/FileContext.jsx";
 import { useForm } from "react-hook-form";
 import {ContainerFile} from "./Components/ContainerFile.jsx";
+import { useState } from "react";
 
 export const MainPage = () => {
     const { signout, user } = useAuth();
@@ -10,10 +11,13 @@ export const MainPage = () => {
     const { file, files, setFile, uploadFile, getUserFiles } = useFile();
     const { register, handleSubmit } = useForm();
 
+    const [transactions, setTransactions] = useState(null);
+    const [percentiles, setPercentiles] = useState(null);
+
     const handleSignout = async () => {
         try {
             await signout();
-            navigate('/');
+            navigate('/'); 
         } catch (error) {
             console.error("Error al cerrar sesión", error);
         }
@@ -38,6 +42,7 @@ export const MainPage = () => {
             console.error("Error al subir archivo", error);
         }
     });
+    
 
     return (
         <div>

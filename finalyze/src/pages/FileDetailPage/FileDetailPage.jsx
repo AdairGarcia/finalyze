@@ -1,30 +1,34 @@
 import { useParams } from "react-router-dom";
 import { useFile } from "../../context/FileContext.jsx";
-import {useEffect} from "react";
-import {useAuth} from "../../context/AuthContext.jsx";
+import { useEffect, useState } from "react";
+import { useAuth } from "../../context/AuthContext.jsx";
 
 export const FileDetailPage = () => {
     const { fileId } = useParams();
     const { file, getUserFile, getMovements, getPercentils } = useFile();
     const { user } = useAuth();
+    const [movements, setMovements] = useState(null);
+    const [percentiles, setPercentiles] = useState(null);
 
     const handleOnMovements = async () => {
         try {
-            const movements = await getMovements(user, fileId);
-            console.log("movements:", movements);
+            const fetchedMovements = await getMovements(user, fileId);
+            setMovements(fetchedMovements); // Guarda los movimientos en el estado
         } catch (error) {
             console.error("Error al obtener movimientos", error);
+            setMovements([]); // Maneja el error, por ejemplo, estableciendo un array vacío
         }
     };
 
-    const handleOnPercentils = async () => {
+    const handleOnPercentiles = async () => {
         try {
-            const percentils = await getPercentils(user, fileId);
-            console.log("percentils:", percentils);
+            const fetchedPercentiles = await getPercentils(user, fileId);
+            setPercentiles(fetchedPercentiles); // Guarda los percentiles en el estado
         } catch (error) {
             console.error("Error al obtener percentiles", error);
+            setPercentiles([]); // Maneja el error
         }
-    }
+    };
 
     useEffect(() => {
         getUserFile(user, fileId);
@@ -43,9 +47,21 @@ export const FileDetailPage = () => {
             <button onClick={handleOnMovements}>
                 Ver movimientos
             </button>
-            <button onClick={handleOnPercentils}>
+            {movements && ( // Renderiza los movimientos si existen
+                <div>
+                    <h2>Movimientos:</h2>
+                    <pre>{JSON.stringify(movements, null, 2)}</pre> {/* Formato legible */}
+                </div>
+            )}
+            <button onClick={handleOnPercentiles}>
                 Calcular percentiles
             </button>
+            {percentiles && ( // Renderiza los percentiles si existen
+                <div>
+                    <h2>Percentiles:</h2>
+                    <pre>{JSON.stringify(percentiles, null, 2)}</pre> {/* Formato legible */}
+                </div>
+            )}
         </div>
     );
 };
