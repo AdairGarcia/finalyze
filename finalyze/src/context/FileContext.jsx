@@ -113,7 +113,7 @@ export const FileProvider = ({children}) => {
                 uploadedAt: new Date().toISOString()
             };
 
-            setFiles(prev => [...prev, fileInfo]);
+            //setFiles(prev => [...prev, fileInfo]);
             setFile(fileInfo);
 
             return fileInfo;

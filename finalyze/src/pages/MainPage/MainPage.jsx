@@ -1,13 +1,14 @@
-import { useAuth } from "../../context/AuthContext.jsx";
-import { useNavigate } from "react-router-dom";
-import { useFile } from "../../context/FileContext.jsx";
-import { useForm } from "react-hook-form";
+import {useAuth} from "../../context/AuthContext.jsx";
+import {useNavigate} from "react-router-dom";
+import {useFile} from "../../context/FileContext.jsx";
+import {useForm} from "react-hook-form";
 import {ContainerFile} from "./Components/ContainerFile.jsx";
+import {useEffect} from "react";
 
 export const MainPage = () => {
     const { signout, user } = useAuth();
     const navigate = useNavigate();
-    const { file, files, setFile, uploadFile, getUserFiles } = useFile();
+    const { files, uploadFile, getUserFiles } = useFile();
     const { register, handleSubmit } = useForm();
 
     const handleSignout = async () => {
@@ -62,11 +63,15 @@ export const MainPage = () => {
 
             <div>
                 <h2>Uploaded Files</h2>
-                    {files.map((file, index) => (
+                {files.length === 0 ? (
+                    <p>No files uploaded yet.</p>
+                ) : (
+                    files.map((file, index) => (
                         <div key={index}>
                             <ContainerFile file={file}/>
                         </div>
-                    ))}
+                    ))
+                )}
             </div>
         </div>
     );

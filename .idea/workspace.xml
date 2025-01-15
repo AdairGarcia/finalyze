@@ -8,6 +8,7 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/finalyze/src/context/FileContext.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/finalyze/src/context/FileContext.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/finalyze/src/pages/FileDetailPage/FileDetailPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/finalyze/src/pages/FileDetailPage/FileDetailPage.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/finalyze/src/pages/MainPage/MainPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/finalyze/src/pages/MainPage/MainPage.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,7 +36,7 @@
   <component name="GithubPullRequestsUISettings">{
   &quot;selectedUrlAndAccountId&quot;: {
     &quot;url&quot;: &quot;https://github.com/AdairGarcia/finalyze.git&quot;,
-    &quot;accountId&quot;: &quot;2dcc06bc-c194-435e-9bed-04560aedb6db&quot;
+    &quot;accountId&quot;: &quot;39a26ebe-ad18-455c-98b7-9c6d9ee34c28&quot;
   }
 }</component>
   <component name="ProblemsViewState">
@@ -66,7 +67,7 @@
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
     &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;settings.javascript.linters.eslint&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
     &quot;ts.external.directory.path&quot;: &quot;/snap/webstorm/423/plugins/javascript-plugin/jsLanguageServicesImpl/external&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
@@ -126,6 +127,12 @@
       <workItem from="1736829986891" duration="1206000" />
       <workItem from="1736831531526" duration="620000" />
       <workItem from="1736874047700" duration="362000" />
+      <workItem from="1736896734333" duration="63000" />
+      <workItem from="1736896828230" duration="998000" />
+      <workItem from="1736899906084" duration="314000" />
+      <workItem from="1736900684762" duration="283000" />
+      <workItem from="1736901272360" duration="55000" />
+      <workItem from="1736902400288" duration="3537000" />
     </task>
     <task id="LOCAL-00001" summary="signs pages and routes">
       <option name="closed" value="true" />
