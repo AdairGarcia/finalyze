@@ -12,8 +12,8 @@ export const ContainerFile = ({ file }) => {
     }
 
     return (
-        <div>
-            <h1>Container File</h1>
+        <div className="file-Container">
+            <p>{file.name}</p>
             <p>
                 <Link to={`/file/${encodeURIComponent(file.sk)}`}>
                     {getFileName(file)}

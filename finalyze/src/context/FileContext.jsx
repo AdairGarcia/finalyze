@@ -1,4 +1,4 @@
-import {createContext, useContext, useState} from "react";
+import { createContext, useContext, useState } from "react";
 
 export const FileContext = createContext();
 
@@ -10,7 +10,7 @@ export const useFile = () => {
     return context;
 }
 
-export const FileProvider = ({children}) => {
+export const FileProvider = ({ children }) => {
     const [files, setFiles] = useState([]);
     const [file, setFile] = useState(null);
     const [uploadProgress, setUploadProgress] = useState(0);
@@ -45,7 +45,7 @@ export const FileProvider = ({children}) => {
                 'xtoken': username,
                 'stage': 'dev',
                 'resource': 'GET /files'
-            })
+            });
 
             const response = await fetch('https://rqt24i6itf.execute-api.us-east-1.amazonaws.com/dev/files', {
                 method: 'GET',
@@ -59,6 +59,9 @@ export const FileProvider = ({children}) => {
             const data = await response.json();
             const body = JSON.parse(data.body);
 
+            // Asegúrate de que body sea un array
+            const fileList = Array.isArray(body) ? body : [];
+
             // Function to append files to the list
             const appendFiles = (fileList, newFiles) => {
                 newFiles.forEach(file => {
@@ -66,10 +69,10 @@ export const FileProvider = ({children}) => {
                 });
             };
 
-            appendFiles(files, body);
-            setFiles([...files]);
+            appendFiles(fileList, body);
+            setFiles(fileList);
 
-            return data;
+            return fileList;
         } catch (error) {
             console.error('Error getting user files:', error);
             throw error;
@@ -126,6 +129,32 @@ export const FileProvider = ({children}) => {
         }
     };
 
+    const deleteFile = async (fileId) => {
+        try {
+            const headers = new Headers({
+                'Content-Type': 'application/json',
+                'xtoken': 'your-username', // Reemplaza con el nombre de usuario adecuado
+                'stage': 'dev',
+                'resource': 'DELETE /files/:id',
+                'key': fileId
+            });
+
+            const response = await fetch(`https://rqt24i6itf.execute-api.us-east-1.amazonaws.com/dev/files/${fileId}`, {
+                method: 'DELETE',
+                headers: headers
+            });
+
+            if (!response.ok) {
+                throw new Error('Failed to delete file');
+            }
+
+            setFiles(prevFiles => prevFiles.filter(file => file.id !== fileId));
+        } catch (error) {
+            console.error('Error deleting file:', error);
+            throw error;
+        }
+    };
+
     const getMovements = async (username, key) => {
         try {
             const decodedFileId = decodeURIComponent(key);
@@ -148,7 +177,7 @@ export const FileProvider = ({children}) => {
 
             const data = await response.json();
             const body = JSON.parse(data.body);
-            return body
+            return body;
         } catch (error) {
             console.error('Error getting movements:', error);
             throw error;
@@ -159,7 +188,7 @@ export const FileProvider = ({children}) => {
         try {
             const decodedFileId = decodeURIComponent(key);
             const newKey = decodedFileId.slice(4);
-            console.log('Getting percentilss for:', newKey);
+            console.log('Getting percentils for:', newKey);
             const headers = new Headers({
                 'Content-Type': 'application/json',
                 'xtoken': username,
@@ -177,14 +206,14 @@ export const FileProvider = ({children}) => {
 
             const data = await response.json();
             const body = JSON.parse(data.body);
-            return body
+            return body;
         } catch (error) {
             console.error('Error getting movements:', error);
             throw error;
         }
     };
 
-    return(
+    return (
         <FileContext.Provider value={{
             file,
             files,
@@ -194,13 +223,15 @@ export const FileProvider = ({children}) => {
             uploadFile,
             getUserFile,
             getUserFiles,
+            deleteFile,
             getMovements,
             getPercentils
         }}>
             {children}
         </FileContext.Provider>
-    )
+    );
 }
+
 const getPresignedUrl = async (fileName, fileType, username) => {
     try {
         console.log('Getting presigned URL for:', fileName, fileType);
@@ -209,7 +240,7 @@ const getPresignedUrl = async (fileName, fileType, username) => {
             'xtoken': username,
             'stage': 'dev',
             'resource': 'POST /files'
-        })
+        });
 
         const response = await fetch('https://rqt24i6itf.execute-api.us-east-1.amazonaws.com/dev/files', {
             method: 'POST',
@@ -230,5 +261,3 @@ const getPresignedUrl = async (fileName, fileType, username) => {
         throw error;
     }
 };
-
-
