@@ -18,7 +18,7 @@ export const FileDetailPage = () => {
         try {
             setLoadingMovements(true);
             const fetchedMovements = await getMovements(user, fileId);
-            console.log(fetchedMovements);
+            console.log("Movimientos:", fetchedMovements);
             setMovements(fetchedMovements);
         } catch (error) {
             console.error("Error al obtener movimientos", error);
@@ -31,7 +31,7 @@ export const FileDetailPage = () => {
         try {
             setLoadingPercentils(true);
             const fetchedPercentils = await getPercentils(user, fileId);
-            console.log(fetchedPercentils);
+            console.log("Percentiles:", fetchedPercentils);
             setPercentils(fetchedPercentils);
         } catch (error) {
             console.error("Error al obtener percentiles", error);
@@ -85,33 +85,27 @@ export const FileDetailPage = () => {
                     {loadingPercentils ? "Calculando percentiles..." : "Calcular Percentiles"}
                 </button>
             </div>
-            {/*{movements.length > 0 && (*/}
-            {/*    <div className="card shadow p-4 mb-4">*/}
-            {/*        <h3>Movimientos</h3>*/}
-            {/*        <ul>*/}
-            {/*            {movements.map((movement, index) => (*/}
-            {/*                <li key={index}>{JSON.stringify(movement)}</li>*/}
-            {/*            ))}*/}
-            {/*        </ul>*/}
-            {/*    </div>*/}
-            {/*)}*/}
 
-            {/*{percentils.length > 0 && (*/}
-            {/*    <div className="card shadow p-4">*/}
-            {/*        <h3>Percentiles</h3>*/}
-            {/*        <ul>*/}
-            {/*            {percentils.map((percentil, index) => (*/}
-            {/*                <li key={index}>*/}
-            {/*                    {Object.entries(percentil).map(([key, value]) => (*/}
-            {/*                        <div key={key}>*/}
-            {/*                            <strong>{key}:</strong> {value}*/}
-            {/*                        </div>*/}
-            {/*                    ))}*/}
-            {/*                </li>*/}
-            {/*            ))}*/}
-            {/*        </ul>*/}
-            {/*    </div>*/}
-            {/*)}*/}
+            {movements.length > 0 && (
+                <div className="card shadow p-4 mb-4">
+                    <h3>Movimientos</h3>
+                    <ul>
+                        {movements.map((movement, index) => (
+                            <li key={index}>{JSON.stringify(movement)}</li>
+                        ))}
+                    </ul>
+                </div>
+            )}
+            {percentils.length > 0 && (
+                <div className="card shadow p-4">
+                    <h3>Percentiles</h3>
+                    <ul>
+                        {percentils.map((percentil, index) => (
+                            <li key={index}>{JSON.stringify(percentil)}</li>
+                        ))}
+                    </ul>
+                </div>
+            )}
         </div>
     );
 };
