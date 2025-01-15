@@ -2,9 +2,9 @@ import { useAuth } from "../../context/AuthContext.jsx";
 import { useNavigate } from "react-router-dom";
 import { useFile } from "../../context/FileContext.jsx";
 import { useForm } from "react-hook-form";
-import {ContainerFile} from "./Components/ContainerFile.jsx";
+import { ContainerFile } from "./Components/ContainerFile.jsx";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export const MainPage = () => {
     const { signout, user } = useAuth();
@@ -26,22 +26,44 @@ export const MainPage = () => {
     const handleViewFiles = async () => {
         try {
             const files = await getUserFiles(user);
-            console.log("files:", files);
+            setFiles(files);
+        } catch (error) {
+            console.error("Error al obtener archivos", error);
+        }
+    }
+
+    const toggleViewFiles = async () => {
+        if (!showFiles) {
+            await handleViewFiles();
+        }
+        setShowFiles(!showFiles);
+    };
+
+    const handleDeleteFile = async (fileId) => {
+        try {
+            await deleteFile(fileId);
+            await handleViewFiles(); // Actualiza la lista de archivos después de eliminar
         } catch (error) {
             console.error("Error al eliminar archivo", error);
         }
-    }
+    };
 
     const onSubmit = handleSubmit(async (data) => {
         try {
             await uploadFile(data.file[0], user);
             setUploadSuccess(true);
             setTimeout(() => setUploadSuccess(false), 3000);
-            await getUserFiles(user); // Actualiza la lista de archivos después de subir
+            await handleViewFiles(); // Actualiza la lista de archivos después de subir
         } catch (error) {
             console.error("Error al subir archivo", error);
         }
     });
+
+    useEffect(() => {
+        if (showFiles) {
+            handleViewFiles();
+        }
+    }, [showFiles]);
 
     return (
         <div className="container-fluid vh-100 d-flex flex-column">
@@ -93,18 +115,26 @@ export const MainPage = () => {
                 </button>
             </div>
 
-            <button onClick={handleViewFiles}>
-                Ver archivos
-            </button>
-
-            <div>
-                <h2>Uploaded Files</h2>
-                    {files.map((file, index) => (
-                        <div key={index}>
-                            <ContainerFile file={file}/>
-                        </div>
-                    ))}
-            </div>
+            {showFiles && (
+                <div className="mt-3">
+                    <h2>Uploaded Files</h2>
+                    {files.length > 0 ? (
+                        files.map((file, index) => (
+                            <div key={index} className="d-flex justify-content-between align-items-center">
+                                <ContainerFile file={file} />
+                                <button 
+                                    className="btn btn-danger ms-2" 
+                                    onClick={() => handleDeleteFile(file.id)}
+                                >
+                                    Eliminar
+                                </button>
+                            </div>
+                        ))
+                    ) : (
+                        <p>No hay archivos para mostrar.</p>
+                    )}
+                </div>
+            )}
         </div>
     );
 };

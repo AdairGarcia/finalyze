@@ -4,8 +4,11 @@ import "./HomePage.css";
 export const HomePage = () => {
   const navigate = useNavigate();
 
-  const handleNavigate = (path) => () => {
-    navigate(path);
+  const handleNavigate = (path) => {
+    return () => {
+      console.log(`Navigating to ${path}`);
+      navigate(path);
+    };
   };
 
   return (
@@ -14,13 +17,13 @@ export const HomePage = () => {
         <div className="container">
           <button
             className="btn btn-primary me-2"
-            onClick={handleNavigate("/signin")}
+            onClick={handleNavigate("/signin")} 
           >
             Login
           </button>
           <button
             className="btn btn-success"
-            onClick={handleNavigate("/signup")}
+            onClick={handleNavigate("/signup")} 
           >
             Register
           </button>
@@ -34,10 +37,11 @@ export const HomePage = () => {
           minHeight: "80vh",
           color: "#ffffff",
           textShadow: "1px 1px 5px rgba(0,0,0,0.5)", 
-        }}>
+        }}
+      >
         <h1 className="display-1 fw-bold">Finalyze</h1>
         <p className="lead">Analyze your financial transactions with ease.</p>
-        <div class="text-center">
+        <div className="text-center">
             <img src="Assets\png-clipart-financial-financial-financial-figures-removebg-preview.png" className="rounded" height="75%" alt="Financial Analysis"/>
         </div>
       </div>
