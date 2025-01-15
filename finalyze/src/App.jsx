@@ -8,6 +8,7 @@ import ProtectedRoute from "./pages/ProtectedRoute/ProtectedRoute.jsx";
 import {ConfirmCodePage} from "./pages/ConfirmCodePage/ConfirmCodePage.jsx";
 import {FileProvider} from "./context/FileContext.jsx";
 import {FileDetailPage} from "./pages/FileDetailPage/FileDetailPage.jsx";
+import { DashboardPage } from "./pages/DashboardPage/DashboardPage.jsx";
 
 function App(){
     return(
@@ -16,6 +17,7 @@ function App(){
             <BrowserRouter>
                 <Routes>
                     <Route path={"/"} element={<HomePage />} />
+                    <Route path="/dashboard" element={<DashboardPage />} />
                     <Route path={"/signup"} element={<SignupPage />} />
                     <Route path={"/signin"} element={<SigninPage />} />
                     <Route path={"/signup/code"} element={<ConfirmCodePage />} />
