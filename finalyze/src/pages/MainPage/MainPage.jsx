@@ -13,7 +13,6 @@ export const MainPage = () => {
     const { register, handleSubmit } = useForm();
     const [showFiles, setShowFiles] = useState(false);
     const [uploadSuccess, setUploadSuccess] = useState(false);
-
     const handleSignout = async () => {
         try {
             await signout();
@@ -135,6 +134,7 @@ export const MainPage = () => {
                     )}
                 </div>
             )}
+
         </div>
     );
 };
